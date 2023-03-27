@@ -1,18 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import "./index.css"
-import { store } from "./store/store";
-import { Provider } from "react-redux";
+import "./index.css";
 import axios from "axios";
 
-axios.defaults.baseURL= "http://localhost:4000/api/"
+axios.defaults.baseURL = "https://postor-api.onrender.com/api";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

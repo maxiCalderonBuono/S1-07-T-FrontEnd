@@ -2,12 +2,13 @@ import React from "react";
 import Button from "../atoms/Buttons/Button";
 import * as styles from "../atoms/Buttons/buttonStyles";
 import { AiOutlineFieldTime } from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { purchaseProduct, deleteProduct } from "../../actions/product";
 
 //Card de los productos. EN PROCESO.
 const CardProduct = (props) => {
+
   const location = useLocation();
 
   const { name, _id, image, highestBid, duration, bidUser } = props;

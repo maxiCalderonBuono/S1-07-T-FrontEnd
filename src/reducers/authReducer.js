@@ -20,7 +20,7 @@ export const authReducer = (state = initialState, action) => {
         isAutho: false,
       };
 
-      case types.isValidationFinish:
+    case types.isValidationFinish:
       return {
         ...state,
         isValidationFinish: true,

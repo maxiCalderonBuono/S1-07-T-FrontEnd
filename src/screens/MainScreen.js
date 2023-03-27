@@ -6,7 +6,7 @@ import { getDiffDate } from "../helpers/getDiffDate";
 import { useFetch } from "../hooks/useFetch";
 
 const MainScreen = () => {
-  const URL = "http://localhost:4000/api/products";
+  const URL = "https://postor-api.onrender.com/api/products";
 
   const { data, loading } = useFetch(URL);
 
@@ -18,7 +18,8 @@ const MainScreen = () => {
 
     if (!loading) {
       const productDetail = data.products.filter(
-        (product) => (getDiffDate(product.duration, now) === 1 && !product.deleted)
+        (product) =>
+          getDiffDate(product.duration, now) === 1 && !product.deleted
       );
       setLatest([...productDetail]);
     }
@@ -29,7 +30,7 @@ const MainScreen = () => {
 
     if (!loading) {
       const productDetail = data.products.filter(
-        (product) => ( getDiffDate(product.duration, now) > 0 && !product.deleted )
+        (product) => getDiffDate(product.duration, now) > 0 && !product.deleted
       );
       setActive([...productDetail]);
     }

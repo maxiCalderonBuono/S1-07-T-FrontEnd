@@ -44,9 +44,9 @@ export const NavBar = () => {
               <img
                 src="https://res.cloudinary.com/dvqlenul5/image/upload/v1649261563/logo_white_pbwilp.png"
                 alt="Mejor postor"
-                className="w-16"
+                className="w-12"
               />
-              <p className="invisible ml-3 text-4xl font-bold text-white md:visible">
+              <p className="hidden ml-3 text-2xl font-bold text-white lg:block">
                 Mejor postor
               </p>
             </div>
@@ -54,13 +54,13 @@ export const NavBar = () => {
 
           <div
             onClick={() => setOpenNav(!openNav)}
-            className="absolute text-3xl cursor-pointer right-8 top-6 sm:hidden"
+            className="absolute text-3xl cursor-pointer right-8 top-6 md:hidden"
           >
             {openNav ? <AiOutlineClose /> : <AiOutlineMenu />}
           </div>
           <div className="flex justify-center ">
             <ul
-              className={`sm:flex sm:shadow-none sm:items-center sm:bg-[#3196DA] sm:pb-0 sm:static sm:z-auto sm:w-auto sm:pl-0
+              className={`md:flex md:shadow-none md:items-center md:bg-[#3196DA] md:pb-0 md:static md:z-auto md:w-auto md:pl-0
             shadow-xl rounded-lg bg-background_main absolute z-[-1] pr-5 pl-5 transition-all duration-500 ease-in ${
               openNav ? "top-20" : " top-[-490px]"
             }`}
@@ -69,7 +69,7 @@ export const NavBar = () => {
 
               {isAutho === true ? (
                 <>
-                  <div className="flex mt-3 sm:hidden">
+                  <div className="flex mt-3 md:hidden">
                     <img
                       src={
                         image ||
@@ -82,7 +82,7 @@ export const NavBar = () => {
                       {`Bienvenido ${username}`}
                     </h1>
                   </div>
-                  <div className="flex items-center justify-between mt-8 sm:hidden ">
+                  <div className="flex items-center justify-between mt-8 md:hidden ">
                     <Link to="/myprofile">
                       <Button
                         styles={`${styles.SUCCESS_BUTTON} p-2 text-xl`}
@@ -133,10 +133,7 @@ export const NavBar = () => {
               {/* Navbar main */}
               {isAutho === true ? (
                 <>
-                  <li
-                    key="crear-subasta"
-                    className="text-xl sm:ml-4 sm:my-0 my-7 "
-                  >
+                  <li key="crear-subasta" className="text-xl sm:ml-4 my-7 ">
                     <Link to="/newbid">
                       <button className="flex items-center text-gray-800 duration-500 cursor-pointer hover:text-gray-500">
                         <ImHammer2 className="mr-1.5" />
@@ -144,10 +141,7 @@ export const NavBar = () => {
                       </button>
                     </Link>
                   </li>
-                  <li
-                    key="mis-subastas"
-                    className="text-xl sm:ml-4 sm:my-0 my-7"
-                  >
+                  <li key="mis-subastas" className="text-xl sm:ml-4 my-7">
                     <Link to="/myauctions">
                       <button className="flex items-center text-gray-800 duration-500 cursor-pointer hover:text-gray-500 ">
                         <FaBriefcase className="mr-1.5" />
@@ -155,7 +149,7 @@ export const NavBar = () => {
                       </button>
                     </Link>
                   </li>
-                  <li key="mis-pujas" className="text-xl sm:ml-4 sm:my-0 my-7">
+                  <li key="mis-pujas" className="text-xl sm:ml-4 my-7">
                     <Link to="/mybids">
                       <button className="flex items-center text-gray-800 duration-500 cursor-pointer hover:text-gray-500">
                         <GiTakeMyMoney className="mr-1.5" />

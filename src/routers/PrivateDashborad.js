@@ -5,20 +5,15 @@ import { MyAuctionsScreen } from "../screens/MyAuctionsScreen";
 import { MyBidsScreen } from "../screens/MyBidsScreen";
 import NewPostScreen from "../screens/NewPostScreen";
 import ProductDetailContainer from "../components/moleculs/ProductDetailContainer";
-import { AboutUs } from "../components/organisms/aboutUs";
-
 
 export const PrivateDashboard = () => {
-
-
   return (
-      <Routes>
-        <Route path="/myprofile" element={<EditProfileScreen />} />
-        <Route path="/newbid" element={<NewPostScreen />} />
-        <Route path="/myauctions" element={<MyAuctionsScreen />} />
-        <Route path="/mybids" element={<MyBidsScreen />} />
-        <Route path="/producto/:_id" element={<ProductDetailContainer />} />
-        <Route path="/aboutUS" element={<AboutUs />} />
-      </Routes>
+    <Routes>
+      <Route path="/myprofile" element={<EditProfileScreen />} />
+      <Route path="/newbid" element={<NewPostScreen />} />
+      <Route path="/myauctions" element={<MyAuctionsScreen />} />
+      <Route path="/mybids" element={<MyBidsScreen />} />
+      <Route path="/producto/:_id" element={<ProductDetailContainer />} />
+    </Routes>
   );
 };

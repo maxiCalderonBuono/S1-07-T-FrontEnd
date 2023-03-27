@@ -23,7 +23,6 @@ export const createProduct = (newAuction, reset) => {
 };
 
 export const updateProduct = (bid, bidUser, _id, reset) => {
-
   return async (dispatch) => {
     const res = await fetchConToken(
       `products/${_id}`,
@@ -43,17 +42,14 @@ export const updateProduct = (bid, bidUser, _id, reset) => {
   };
 };
 
-export const deleteProduct = ( _id) => {
-
+export const deleteProduct = (_id) => {
   return async (dispatch) => {
-    const res = await fetchConToken(
-      `products/${_id}`,{},
-      "DELETE"
-    );
+    const res = await fetchConToken(`products/${_id}`, {}, "DELETE");
     const body = await res.json();
 
     if (res.status === 200) {
       toast.success("Tu subasta fue eliminada con éxito");
+      window.location.reload(true);
     } else {
       toast.error(body.message);
     }

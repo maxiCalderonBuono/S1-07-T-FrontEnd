@@ -27,8 +27,6 @@ const ProductDetail = ({ detail }) => {
 
   // const endAt = new Date(duration).toLocaleDateString();
 
-  // console.log(bidUserData[0]);
-
   let endAt2 = duration;
 
   if (endAt2) {
@@ -57,7 +55,6 @@ const ProductDetail = ({ detail }) => {
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full h-full p-8">
-        <h1>{name}</h1>
         <div className="flex flex-col items-center justify-center w-full m-20">
           <img
             className="w-auto rounded-md border-8 border-[#3196DA] h-60"
@@ -106,7 +103,7 @@ const ProductDetail = ({ detail }) => {
             <div className="flex flex-col md:flex-wrap">
               <p className="mt-5 mr-3 text-sm text-[#3196DA] md:text-lg">
                 USUARIO:{" "}
-                {bidUserData ? bidUserData[0].username : "No hay usuario"}
+                {bidUserData ? bidUserData[0]?.username : "No hay usuario"}
               </p>
               <p className="mt-5 mr-3 text-sm text-[#3196DA] md:text-lg">
                 FINALIZA EL: {endAt2}

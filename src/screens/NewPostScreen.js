@@ -16,9 +16,7 @@ import { uploadImage } from "../actions/images";
 import toast from "react-hot-toast";
 
 const NewPostScreen = () => {
-  const bidUser = "6259c3c04240cc9d55377ec4";
-
-  const navigate = useNavigate();
+  const bidUser = "630e70aff7fb8548f478e1a1";
 
   const { id } = useSelector((state) => state.auth);
 
@@ -84,6 +82,7 @@ const NewPostScreen = () => {
 
     const pictureURI = picture ? await uploadImage(picture) : pictureUrl;
     newAuction.image = pictureURI;
+
     dispatch(createProduct(newAuction, reset));
   };
 
